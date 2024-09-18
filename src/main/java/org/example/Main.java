@@ -3,15 +3,25 @@ package org.example;
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
-    public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+    public static void main(String[] args) throws SocketException {
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+        int PUERTO = 5000; //puerto en donde se le enviara los socketsUDP al server
+        byte[] buffer = new byte[1024]; //datos que contendra el packetUDP
+        try{
+            //socket recibidor
+            DatagramSocket socketUDP = new DatagramSocket(PUERTO);
+            while(true) {
+                //packet de escucha
+                DatagramPacket packetUDP = new DatagramPacket(buffer, buffer.length);
+                //el socket escucha y recibe en el packet
+                socketUDP.receive(packetUDP);
+            }
+        }catch (SocketException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
+
+
     }
 }
