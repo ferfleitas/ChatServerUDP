@@ -1,8 +1,11 @@
-package org.example;
+package server;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
+import java.io.IOException;
+import java.net.DatagramPacket;
+import java.net.DatagramSocket;
+import java.net.SocketException;
+
+public class serverUDP {
     public static void main(String[] args) throws SocketException {
 
         int PUERTO = 5000; //puerto en donde se le enviara los socketsUDP al server
