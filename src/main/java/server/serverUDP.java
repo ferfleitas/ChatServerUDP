@@ -25,9 +25,10 @@ public class serverUDP {
                 socketUDP.receive(packetUDP);
 
                 String mensajeRecibido = new String(packetUDP.getData());
-                InetAddress direccionIP = socketUDP.getInetAddress();
+                mensajeRecibido = mensajeRecibido.trim();
+                int puertoCliente = socketUDP.getPort();
                 System.out.println(mensajeRecibido);
-                System.out.println("De: " + direccionIP);
+                System.out.println("De: " + puertoCliente);
 
             }
         }catch (SocketException e) {
