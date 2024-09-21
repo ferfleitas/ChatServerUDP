@@ -13,3 +13,12 @@ Realizar un servidor y cliente de chat que contemple las funciones de recepción
 - **ServerUDP:** va a gestionar las peticiones, guardar los datos de los nuevos clientes, asi avisaria al sender a quien puede enviar.
 - **ClienteUDP:** es el cliente encargado de recepccionar los mensajes del sender, y mostrar en pantalla USUARIO-ORIGEN.
 - **senderUDP:** un tipo de cliente capaz de elegir a quien enviar los mensajes al servidor y el servidor repartirlo entre los demas clientes de tipo recepcion.
+
+
+
+## Server UDP
+- cada cliente recepcionista manda su info al server
+- el server debe guardar los clientes y sus sockets
+- enviar datos de clientes disponibles al cliente-sender
+- el cliente sender envia al server y el server al recepcionista
+- el cliente recepcionista recibe e imprime
